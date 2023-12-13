@@ -8,18 +8,18 @@ $("#formulario-reserva").submit(function (e) {
   e.preventDefault();
   contador++;
   const cantidad = Number($("#cantidad").val());
-  const tipo = $('#tipo').val();
+  const tipo = $("#tipo").val();
 
   costo = 0;
 
   switch (tipo) {
-    case 'Simple':
+    case "Simple":
       costo = cantidad * 70;
       break;
-    case 'Doble':
+    case "Doble":
       costo = cantidad * 60;
       break;
-    case 'Triple':
+    case "Triple":
       costo = cantidad * 50;
       break;
   }
@@ -32,31 +32,12 @@ $("#formulario-reserva").submit(function (e) {
     <td>${costo}</td>
   </tr>
   `);
-  $('#span1').html(contador);
+  $("#span1").html(contador);
   alert("Reserva agregada al carrito");
-
 });
 
 function elminarSeleccion() {
-  $('.table-primary').remove();
+  $(".table-primary").remove();
   contador = 0;
-  $('#span1').html(contador);
+  $("#span1").html(contador);
 }
-
-$(".img-fluid").hover(
-  function () {
-    $(this).animate(
-      {
-        scale:(1, 1.1),
-      },
-      800
-    )
-  }, function () {
-    $(this).animate(
-      {
-        scale:'1',
-      },
-      800
-    )
-  }
-);
